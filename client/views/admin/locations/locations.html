@@ -1,0 +1,11 @@
+<template name="locations">
+
+  <h1>Locations</h1>
+
+  <a href="{{ pathFor 'location.add' }}">Add location</a>
+
+  {{# each locations }}
+    <a href="{{ pathFor 'location.edit' this._id }}">{{ title }}</a>
+  {{/each}}
+
+</template>
