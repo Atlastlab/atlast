@@ -7,15 +7,13 @@
       <tr>
         <th>#</th>
         <th>Name</th>
-        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
-      {{#each indexedArray locations}}
+      {{#each locations}}
         <tr>
-          <td>{{index}}</td>
-          <td><a href="{{ pathFor 'location.edit' this._id }}">{{ title }}</a></td>
-          <td></td>
+          <td>{{ title }}</td>
+          <td><a href="{{ pathFor 'location.edit' this._id }}">Edit</a></td>
         </tr>
       {{/each}}
     </tbody>
