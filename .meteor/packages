@@ -12,3 +12,5 @@ iron:router
 aldeed:autoform
 accounts-ui
 accounts-password
+alanning:roles
+monbro:iron-router-breadcrumb
