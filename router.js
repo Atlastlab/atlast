@@ -3,6 +3,7 @@ Router.configure({
 })
 
 Router.route('/', function () {
+  this.layout('AppLayout')
   this.render('Home', {
   })
 }, {

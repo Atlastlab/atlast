@@ -2,8 +2,23 @@
 
   <a href="{{ pathFor 'location.add' }}">Add location</a>
 
-  {{# each locations }}
-    <a href="{{ pathFor 'location.edit' this._id }}">{{ title }}</a>
-  {{/each}}
+  <table class="locations-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each indexedArray locations}}
+        <tr>
+          <td>{{index}}</td>
+          <td><a href="{{ pathFor 'location.edit' this._id }}">{{ title }}</a></td>
+          <td></td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
 
 </template>
