@@ -23,7 +23,7 @@ Template.map.rendered = function () {
 
           map.addLayer({
             "id": location._id,
-            "type": "fill",
+            "type": "symbol",
             "source": location._id,
             "layout": {
               "icon-image": "{marker-symbol}-12",

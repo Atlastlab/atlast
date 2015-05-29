@@ -23,13 +23,26 @@ Template.leafletDraw.rendered = function () {
   this.$('.map').attr('id', mapId)
 
   L.Icon.Default.imagePath = '/images'
-  this.map = new L.Map(mapId).setView([51.505, -0.09], 13)
+  this.map = new L.Map(mapId).setView([52, 5], 7)
   this.mapLayer = L.tileLayer(AtlastInstance.mapUrl)
   this.map.addLayer(this.mapLayer)
   this.drawnItems = new L.geoJson()
 
   this.map.addLayer(this.drawnItems)
-  this.drawControl = new L.Control.Draw()
+  this.drawControl = new L.Control.Draw({
+    position: 'topright',
+    draw: {
+      polyline: false,
+      polygon: false,
+      circle: false,
+      rectangle: false
+    },
+    edit: {
+      featureGroup: this.drawnItems,
+      remove: true
+    }
+  });
+
   this.map.addControl(this.drawControl)
 
   this.map.on('draw:created', function (e) {

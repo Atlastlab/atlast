@@ -34,6 +34,20 @@ Router.route('/admin/locations', function () {
   parent: 'admin'
 })
 
+Router.route('/locations/:_id', function () {
+  this.layout('AppLayout')
+
+  this.render('location-view', {
+    data: {
+      location: Locations.findOne({_id: this.params._id})
+    }
+  })
+}, {
+  title: 'View location',
+  name: 'location.view',
+  parent: 'home'
+})
+
 Router.route('/admin/locations/add', function () {
   this.render('location-add')
 }, {
