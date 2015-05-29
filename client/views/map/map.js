@@ -55,9 +55,11 @@ Template.map.rendered = function () {
     })
 
     map.on('click', function(e) {
-        map.featuresAt(e.point, {radius: 5}, function(err, features) {
+        map.featuresAt(e.point, {radius: 20}, function(err, features) {
             if (err) throw err
-            console.log(JSON.stringify(features, null, 2))
+            if (features[0].layer.id) {
+              Router.go('/locations/' + features[0].layer.id)
+            }
         })
     })
   })

@@ -1,8 +1,9 @@
 <template name="locationView">
 
-  <h3>{{ location.title }}</h3>
-  <p>{{ location.geojson }}</p>
-
-  <a href="{{ pathFor 'home' }}">Close</a>
+  <div class="location-view">
+    <h3>{{ location.title }}</h3>
+    <p>{{ location.geojson }}</p>
+    <a href="{{ pathFor 'home' }}">Close</a>
+  </div>
 
 </template>
