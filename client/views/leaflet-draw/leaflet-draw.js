@@ -30,18 +30,14 @@ Template.leafletDraw.rendered = function () {
 
   this.map.addLayer(this.drawnItems)
   this.drawControl = new L.Control.Draw({
-    position: 'topright',
-    draw: {
-      polyline: false,
-      polygon: false,
-      circle: false,
-      rectangle: false
-    },
     edit: {
-      featureGroup: this.drawnItems,
-      remove: true
+      featureGroup: this.drawnItems
+    },
+    draw: {
+      // The circle is not in the GeoJSON spec.
+      circle: false,
     }
-  });
+  })
 
   this.map.addControl(this.drawControl)
 
