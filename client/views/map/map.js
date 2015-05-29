@@ -3,11 +3,8 @@ Template.map.rendered = function () {
   mapboxgl.util.getJSON('https://www.mapbox.com/mapbox-gl-styles/styles/outdoors-v7.json', function (err, style) {
     if (err) throw err
 
-    style.layers.forEach(function(layer) {
-      // layer.interactive = true;
-    })
+    mapboxgl.accessToken = 'pk.eyJ1IjoibWljaGllbGtva2VlIiwiYSI6Ilk5QUppQXMifQ.A-pV1_4Mx4p_o94_QYGM6Q'
 
-    mapboxgl.accessToken = 'pk.eyJ1IjoibWljaGllbGtva2VlIiwiYSI6Ilk5QUppQXMifQ.A-pV1_4Mx4p_o94_QYGM6Q';
     var map = new mapboxgl.Map({
       container: 'map',
       style: style,
