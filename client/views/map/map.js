@@ -1,11 +1,20 @@
 Template.map.rendered = function () {
 
+  var map
+
+  window.addEventListener("deviceorientation", handleOrientation, true)
+
+  function handleOrientation(event) {
+    var degrees = event.alpha
+    map.setBearing(degrees)
+  }
+
   mapboxgl.util.getJSON('https://www.mapbox.com/mapbox-gl-styles/styles/outdoors-v7.json', function (err, style) {
     if (err) throw err
 
     mapboxgl.accessToken = 'pk.eyJ1IjoibWljaGllbGtva2VlIiwiYSI6Ilk5QUppQXMifQ.A-pV1_4Mx4p_o94_QYGM6Q'
 
-    var map = new mapboxgl.Map({
+    map = new mapboxgl.Map({
       container: 'map',
       style: style,
       center: [52, 5],
@@ -18,8 +27,6 @@ Template.map.rendered = function () {
 
       query.observe({
         added: function (location) {
-
-          console.log(location)
 
           var geojson = EJSON.parse(location.geojson)
 
