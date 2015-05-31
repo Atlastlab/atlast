@@ -1,40 +1,12 @@
-@import 'leaflet';
-@import 'leaflet.draw';
-@import 'leaflet.gl';
+@import 'variables/variables';
 
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
+@import 'libs/leaflet';
+@import 'libs/leaflet.draw';
+@import 'libs/leaflet.gl';
 
-* {
-  box-sizing: border-box;
-}
+@import 'base/elements';
+@import 'components/location-view';
+@import 'components/main-map';
+@import 'components/map-widget';
 
-.map {
-  width: 600px;
-  height: 300px;
-}
 
-.main-map {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-.mapboxgl-ctrl-attrib {
-  display: none;
-}
-
-.location-view {
-  padding: 20px;
-  margin-top: calc(100vh - 50px);
-  background: white;
-  width: 100%;
-  position: relative;
-  z-index: 2;
-  float: left;
-}

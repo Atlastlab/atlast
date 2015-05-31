@@ -2,12 +2,9 @@ Template.map.rendered = function () {
 
   var map
 
-  window.addEventListener("deviceorientation", handleOrientation, true)
-
-  function handleOrientation(event) {
-    var degrees = event.alpha
-    map.setBearing(degrees)
-  }
+  window.addEventListener("deviceorientation", function (event) {
+    map.setBearing(event.alpha)
+  }, true)
 
   mapboxgl.util.getJSON('https://www.mapbox.com/mapbox-gl-styles/styles/outdoors-v7.json', function (err, style) {
     if (err) throw err
@@ -63,12 +60,32 @@ Template.map.rendered = function () {
     })
 
     map.on('click', function(e) {
-        map.featuresAt(e.point, {radius: 20}, function(err, features) {
-            if (err) throw err
-            if (features[0] && features[0].layer.id) {
-              Router.go('/locations/' + features[0].layer.id)
+      map.featuresAt(e.point, {radius: 20}, function(err, features) {
+        if (err) throw err
+
+        if (features[0] && features[0].layer.id) {
+          var path = '/locations/' + features[0].layer.id
+
+          if (path != window.location.pathname) {
+            var goOn = function () {
+              $('.location-view').addClass('slide-down').one('transitionend', function () {
+                Router.go(path)
+              })
             }
-        })
+
+            if ($(window).scrollTop() != 0) {
+              $('html, body').animate({
+                scrollTop: 0
+              }, 300, function () {
+                goOn()
+              })
+            }
+            else {
+              goOn()
+            }
+          }
+        }
+      })
     })
   })
 }

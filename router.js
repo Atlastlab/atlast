@@ -67,3 +67,9 @@ Router.route('/admin/locations/:_id/edit', function () {
   name: 'location.edit',
   parent: 'locations'
 })
+
+Router.configure({
+  onAfterAction: function() {
+    $('.location-view').removeClass('slide-down')
+  }
+});

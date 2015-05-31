@@ -70,23 +70,7 @@
 }
 
 .mapboxgl-ctrl-attrib {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    padding: 0 5px;
-    background-color: rgba(255,255,255,0.5);
-}
-.mapboxgl-ctrl-attrib a {
-    color: rgba(0,0,0,0.75);
-    text-decoration: none;
-}
-.mapboxgl-ctrl-attrib a:hover {
-    color: inherit;
-    text-decoration: underline;
-}
-.mapboxgl-ctrl-attrib .mapbox-improve-map {
-    font-weight: bold;
-    margin-left: 2px;
+    display: none;
 }
 
 .mapboxgl-popup {
@@ -134,9 +118,4 @@
     background: #fff;
     border: 2px dotted #202020;
     opacity: 0.5;
-}
-@media print {
-    .mapbox-improve-map {
-        display:none;
-    }
 }

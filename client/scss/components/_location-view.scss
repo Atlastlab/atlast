@@ -1,0 +1,18 @@
+.location-view {
+  padding: 20px;
+  margin-top: calc(100vh - 50px);
+  background: white;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  float: left;
+  transition: all $speed $easing;
+  transform: translateY(0);
+  opacity: 1;
+
+  &.slide-down {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+}
