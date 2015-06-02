@@ -2,6 +2,7 @@
 
   {{#autoForm collection="Locations" doc=this.location  id="location-edit-form" type="update"}}
     {{> afQuickField name='title'}}
+    {{> afQuickField name='description' rows=8}}
     {{> afQuickField name='geojson'}}
     <button type="submit">Update</button>
   {{/autoForm}}

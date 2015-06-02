@@ -1,10 +1,10 @@
 <template name="locationView">
 
   <div>
-    <div class="location-view">
+    <div class="location-view slide-down">
       <strong>{{ location.title }}</strong>
-      <p>{{ location.geojson }}</p>
-      <a href="{{ pathFor 'home' }}">Close</a>
+      <p>{{ location.description }}</p>
+            <a href="{{ pathFor 'home' }}" class="close-location-view"><i class="fa fa-times"></i></a>
     </div>
   </div>
 

@@ -8,6 +8,10 @@ Schemas.Location = new SimpleSchema({
     label: "Title",
     max: 200
   },
+  description: {
+    type: String,
+    label: "Description",
+  },
   geojson: {
     type: String,
     label: "GeoJSON",

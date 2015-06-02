@@ -52,6 +52,7 @@ mobile-status-bar@1.0.3
 momentjs:moment@2.8.4
 monbro:iron-router-breadcrumb@1.0.7
 mongo@1.1.0
+natestrauser:font-awesome@4.3.0
 npm-bcrypt@0.7.8_2
 observe-sequence@1.0.6
 ordered-dict@1.0.3
