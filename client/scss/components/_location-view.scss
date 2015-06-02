@@ -11,6 +11,10 @@
   transform: translateY(0);
   opacity: 1;
 
+  .close-location-view {
+    float: right;
+  }
+
   &.slide-down {
     transform: translateY(50px);
     opacity: 0;
