@@ -4,6 +4,11 @@
     {{> afQuickField name='title'}}
     {{> afQuickField name='description' rows=8}}
     {{> afQuickField name='geojson'}}
+
+    {{#each plugins }}
+      {{> UI.dynamic template=template}}
+    {{/each }}
+
     <button type="submit">Update</button>
   {{/autoForm}}
 

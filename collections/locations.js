@@ -2,7 +2,7 @@ var Schemas = {}
 
 Locations = new Mongo.Collection("locations")
 
-Schemas.Location = new SimpleSchema({
+var locationSchema = {
   title: {
     type: String,
     label: "Title",
@@ -21,6 +21,8 @@ Schemas.Location = new SimpleSchema({
       }
     }
   }
-})
+}
+
+Schemas.Location = new SimpleSchema(locationSchema)
 
 Locations.attachSchema(Schemas.Location)
