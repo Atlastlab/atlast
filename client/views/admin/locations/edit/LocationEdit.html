@@ -6,7 +6,7 @@
     {{> afQuickField name='geojson'}}
 
     {{#each plugins }}
-      {{> UI.dynamic template=template}}
+      {{> UI.dynamic template=templates.locationForm }}
     {{/each }}
 
     <button type="submit">Update</button>

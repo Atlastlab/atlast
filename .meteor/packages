@@ -17,3 +17,6 @@ monbro:iron-router-breadcrumb
 bevanhunt:leaflet
 ccorcos:transitioner
 natestrauser:font-awesome
+cfs:standard-packages
+cfs:gridfs
+yogiben:autoform-file

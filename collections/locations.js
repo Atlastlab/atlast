@@ -23,6 +23,19 @@ var locationSchema = {
   }
 }
 
+if (1 == 1) {
+  locationSchema['images'] = {
+    type: String,
+    label: 'Images',
+    autoform: {
+      afFieldInput: {
+        type: 'fileUpload',
+        collection: 'Images'
+      }
+    }
+  }
+}
+
 Schemas.Location = new SimpleSchema(locationSchema)
 
 Locations.attachSchema(Schemas.Location)

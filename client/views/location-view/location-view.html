@@ -5,6 +5,15 @@
       <a href="{{ pathFor 'home' }}" class="close-location-view"><i class="fa fa-times"></i></a>
       <strong>{{ location.title }}</strong>
       <p>{{ location.description }}</p>
+
+    {{#each plugins }}
+      {{#with location}}
+      {{> UI.dynamic template=templates.locationView data=images }}
+      {{/with }}
+    {{/each }}
+
+    <img alt="{{location.images.name}}" src="{{location.images.url}}">
+
     </div>
   </div>
 

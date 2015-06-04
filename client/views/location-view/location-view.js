@@ -28,3 +28,9 @@ Template.locationView.events({
 
   }
 })
+
+Template.locationView.helpers({
+  plugins: function () {
+    return AtlastInstance.plugins
+  }
+})

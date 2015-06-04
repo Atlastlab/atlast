@@ -56,13 +56,19 @@ Router.route('/admin/locations/add', function () {
   parent: 'locations'
 })
 
-Router.route('/admin/locations/:_id/edit', function () {
-  this.render('location-edit', {
-    data: {
-      location: Locations.findOne({_id: this.params._id})
-    }
-  })
-}, {
+
+Router.route('/admin/locations/:_id/edit', {
+  loadingTemplate: 'loading',
+  waitOn: function () {
+     return [Meteor.subscribe('images')]
+  },
+  action: function () {
+    this.render('location-edit', {
+      data: {
+        location: Locations.findOne({_id: this.params._id})
+      }
+    })
+  },
   title: 'Edit location',
   name: 'location.edit',
   parent: 'locations'
